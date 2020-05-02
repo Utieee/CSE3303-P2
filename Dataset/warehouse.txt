@@ -1,18 +1,16 @@
 OrderID,Amount,Address,Email,Phone,InBulk,OrderDate,Deadline
-154148,149,"894,Sierra,St,San,Francisco,CA",renim1@renim.global.net,4152312356,149,20200110,20200301
-154149,84,"221,Tango,Rd,Los,Angeles,CA",renim2@renim.global.net,2132200012,84,20200123,20200320
-154120,129,"3000,S,Cooper,St,Arlington,TX",ringo123@gmail.com,8173323192,129,20200223,20200423
-154121,123,"1000,Corn,Valley,Rd,Grand,Prairie,TX",duoal@aol.com,9723312212,123,20200231,20200512
-154122,121,"3154,S,Belt,Line,Rd,Irving,TX",oafiw@gmail.com,9723113913,121,20200313,20200513
-154125,200,"232,3rd,Ave,New,York,NY",oarark@yahoo.com,2125192193,200,20200315,20200515
-154141,130,"201,Main,St,Ridgefield,Park,NJ",laoa409@aol.com,2104402131,130,20200315,20200515
-154155,220,"76,Summer,St,Boston,MA",alda4@zoho.com,8574410131,220,20200326,20200526
-161717,79,"44,E,Ontario,St,Chicago,IL",laiar9@icloud.com,3129516331,79,20200330,20200530
-161719,100,"160,12th,St,Elko,NV",aaiq849@yahoo.com,7753312914,100,20200331,20300531
-161813,150,"3101,W,Kootenai,St,Boise,ID",alfaoe921@gmail.co,2083389782,150,20200401,20200712
-181910,312,"215,E,Palm,Ave,Tampa,FL",iafia@gmail.com,8139912911,312,20200430,20200730
-181911,80,"14798,E,Iliff,Ave,Aurora,CO",kadjair@yahoo.com,3037284183,80,20200409,20200709
-192310,150,"900,State,St,Salem,OR",marifar@gmail.com,5038132139,150,20200411,20200711
-192311,200,"1918,E,Yesler,Way,Seattle,WA",afuaei@gmail.com,2068412913,200,20200415,20200715
-193310,350,"391,E,Makaala,St,Hilo,HI",madiark@yahoo.com,8089213184,350,20200420,20200720
-193410,400,"1450,Ala,Moana,Blvd,Honolulu,HI",mafiae@yahoo.com,8084412194,400,20200412,20200721
+154148,149,"894 Sierra Street, San Francisco, CA",renim1@renim.global.net,415-231-2356,149,20200110,20200301
+154149,84,"221 Tango Road, Los Angeles, CA",renim2@renim.global.net,213-220-0012,84,20200123,20200320
+154120,129,"3000 Cooper Street, Arlington, TX",ringo123@gmail.com,817-332-3192,129,20200223,20200423
+154121,123,"1000 Corn Valley Road, Grand Prairie, TX",duoal@aol.com,972-331-2212,123,20200231,20200512
+154122,121,"3154 S Belt Line Road, Irving, TX",oafiw@gmail.com,972-311-3913,121,20200313,20200513
+154125,200,"232 3rd Avenue, New York, NY",oarark@yahoo.com,212-519-2193,200,20200315,20200515
+154141,130,"201 Main Street, Ridgefield Park, NJ",laoa409@aol.com,210-440-2131,130,20200315,20200515
+154155,220,"76 Summer Street, Boston, MA",alda4@zoho.com,857-441-0131,220,20200326,20200526
+161717,79,"44 E Ontario Street, Chicago, IL",laiar9@icloud.com,312-951-6331,79,20200330,20200530
+161719,100,"160 12th Street, Elko, NV",aaiq849@yahoo.com,775-331-2914,100,20200331,20300531
+161813,150,"3101 W Kootenai Street, Boise, ID",alfaoe921@gmail.com,208-338-9782,150,20200401,20200712
+181910,312,"215 E Palm Avenue, Tampa, FL",iafia@gmail.com,813-991-2911,312,20200430,20200730
+181911,80,"14798 E Iliff Avenue, Aurora, CO",kadjair@yahoo.com,303-728-4183,80,20200409,20200709
+192310,150,"900 State Street, Salem, OR",marifar@gmail.com,503-813-2139,150,20200411,20200711
+192311,200,"1918 E Yesler Way, Seattle, WA",afuaei@gmail.com,206-841-2913,200,20200415,20200715
