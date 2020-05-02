@@ -1,15 +1,35 @@
-ClientId	Name	Address	RCCustomerId	RCOrderID	RCUsedDenim
-9203	Levis	"9091 Cotton Blvd, San Francisco, CA"	10004	154148	149
-9204	Madewell	"2380 Industrial Way, Los Angeles, CA"	10005	154149	84
-9205	Gap	"4828 Eagles Nest Drivem,Redding,CA"	10006	154150	2
-9206	Everlane	"3163 Wilson Street,Bishop,CA"	10007	154151	20
-9207	Asos	"3670 Duck Creek Road,Palo Alto,CA"	10008	154152	200
-9208	Dawson	"4653 Fairfax Drive,City Of Commerce,CA"	10009	154153	45
-9209	Huit	"3675 Canis Heights Drive,Los Angeles,CA"	10010	154154	23
-9210	GoodAmerican	"3617 Jim Rosa Lane,Dublin,CA"	10011	154155	56
-9211	Jbrand	"2888 Ashcraft Court,El Cajon,CA"	10012	154156	65
-9212	Wrangler	"4005 Norman Street,Los Angeles,CA"	10013	154157	12
-9213	Calvin Klein	"4174 Locust Court,Norwalk,CA"	10014	154158	190
-9214	Diesel	"215 Angie Drive,Burbank,CA"	10015	154159	22
-9215	Guess	"2245 Wayside Lane,San Leandro,CA"	10016	154160	55
-9216	Balmain	"3436 Center Avenue,Fresno,CA"	10017	154161	33
+<<<<<<< HEAD
+ProductID,CommericalApplication,CompostMaterial,EPOrderID
+1,NO,YES,54148
+2,YES,NO,154149
+3,YES,YES,154150
+4,NO,YES,154151
+5,YES,NO,154152
+6,NO,YES,154153
+7,YES,NO,154154
+8,NO,NO,154155
+9,NO,YES,154156
+10,YES,NO,154157
+11,NO,YES,154158
+12,NO,NO,154159
+13,NO,YES,154160
+14,YES,YES,154161
+15,NO,YES,154162
+			
+=======
+ClientId,Name,Address,RCCustomerId,RCOrderID,RCUsedDenim
+9203,Levis,"9091 Cotton Blvd, San Francisco,CA",10004,154148,149
+9204,Madewell,"2380 Industrial Way,Los Angeles,CA",10005,154149,84
+9205,Gap,"4828 Eagles Nest Drivem,Redding,CA",10006,154150,2
+9206,Everlane,"3163 Wilson Street,Bishop,CA",10007,154151,20
+9207,Asos,"3670 Duck Creek Road,Palo Alto,CA",10008,154152,200
+9208,Dawson,"4653 Fairfax Drive,City Of Commerce,CA",10009,154153,45
+9209,Huit,"3675 Canis Heights Drive,Los Angeles,CA",10010,154154,23
+9210,GoodAmerican,"3617 Jim Rosa Lane,Dublin,CA",10011,154155,56
+9211,Jbrand,"2888 Ashcraft Court,El Cajon,CA",10012,154156,65
+9212,Wrangler,"4005 Norman Street,Los Angeles,CA",10013,154157,12
+9213,Calvin Klein,"4174 Locust Court,Norwalk,CA",10014,154158,190
+9214,Diesel,"215 Angie Drive,Burbank,CA",10015,154159,22
+9215,Guess,"2245 Wayside Lane,San Leandro,CA",10016,154160,55
+9216,Balmain,"3436 Center Avenue,Fresno,CA"10017,154161,33
+>>>>>>> f69b69c93da18cb2faf61b6f8adbd9c379bdf2bd
