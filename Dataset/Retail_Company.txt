@@ -12,5 +12,5 @@ ClientId,Name,Address,RCCustomerId,RCOrderID,RCUsedDenim
 9213,Calvin Klein,"4174 Locust Court,Norwalk,CA",10014,154158,190
 9214,Diesel,"215 Angie Drive,Burbank,CA",10015,154159,22
 9215,Guess,"2245 Wayside Lane,San Leandro,CA",10016,154160,55
-9216,Balmain,"3436 Center Avenue,Fresno,CA"10017,154161,33
+9216,Balmain,"3436 Center Avenue,Fresno,CA",10017,154161,33
 
