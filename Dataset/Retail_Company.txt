@@ -7,7 +7,7 @@ ClientId,Name,Address,RCCustomerId,RCOrderID,RCUsedDenim
 9208,Dawson,"4653 Fairfax Drive,City Of Commerce,CA",16,154153,45
 9209,Huit,"3675 Canis Heights Drive,Los Angeles,CA",7,154154,23
 9210,GoodAmerican,"3617 Jim Rosa Lane,Dublin,CA",6,154155,56
-9211,Jbrand,"2888 Ashcraft Court,El Cajon,CA",10012,154156,65
+9211,Jbrand,"2888 Ashcraft Court,El Cajon,CA",4,154156,65
 9212,Wrangler,"4005 Norman Street,Los Angeles,CA",10,154157,12
 9213,Calvin Klein,"4174 Locust Court,Norwalk,CA",12,154158,190
 9214,Diesel,"215 Angie Drive,Burbank,CA",9,154159,22
