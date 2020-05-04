@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 07:47 AM
+-- Generation Time: May 04, 2020 at 01:16 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -92,6 +91,20 @@ INSERT INTO `buyer_endproduct` (`BEBuyerID`, `BEProductID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `buyer_endproduct_info`
+-- (See below for the actual view)
+--
+CREATE TABLE `buyer_endproduct_info` (
+`FN` varchar(100)
+,`LN` varchar(100)
+,`Items` int(255)
+,`CA` varchar(500)
+,`CM` varchar(500)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
@@ -130,10 +143,10 @@ INSERT INTO `customer` (`CustomerID`, `NoOfItems`, `Email`, `Phone`, `Address`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `end-product`
+-- Table structure for table `end_product`
 --
 
-CREATE TABLE `end-product` (
+CREATE TABLE `end_product` (
   `ProductID` varchar(6) NOT NULL,
   `CommercialApplication` varchar(500) NOT NULL,
   `CompostMaterial` varchar(500) NOT NULL,
@@ -141,10 +154,10 @@ CREATE TABLE `end-product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `end-product`
+-- Dumping data for table `end_product`
 --
 
-INSERT INTO `end-product` (`ProductID`, `CommercialApplication`, `CompostMaterial`, `EPOrderID`) VALUES
+INSERT INTO `end_product` (`ProductID`, `CommercialApplication`, `CompostMaterial`, `EPOrderID`) VALUES
 ('1', 'NO', 'YES', '154148'),
 ('10', 'YES', 'NO', '154157'),
 ('11', 'NO', 'YES', '154158'),
@@ -269,6 +282,15 @@ INSERT INTO `warehouse` (`OrderID`, `Amount`, `Address`, `Email`, `Phone`, `InBu
 ('154161', 150, '900 State Street, Salem, OR', 'marifar@gmail.com', '503-813-2139', 150, '2020-04-11', '2020-07-11'),
 ('154162', 200, '1918 E Yesler Way, Seattle, WA', 'afuaei@gmail.com', '206-841-2913', 200, '2020-04-15', '2020-07-15');
 
+-- --------------------------------------------------------
+
+--
+-- Structure for view `buyer_endproduct_info`
+--
+DROP TABLE IF EXISTS `buyer_endproduct_info`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `buyer_endproduct_info`  AS  select `buyer`.`FName` AS `FN`,`buyer`.`LName` AS `LN`,`buyer`.`NoOfItems` AS `Items`,`end_product`.`CommercialApplication` AS `CA`,`end_product`.`CompostMaterial` AS `CM` from ((`buyer` join `buyer_endproduct`) join `end_product`) where `buyer_endproduct`.`BEBuyerID` = `buyer`.`BuyerID` and `buyer_endproduct`.`BEProductID` = `end_product`.`ProductID` ;
+
 --
 -- Indexes for dumped tables
 --
@@ -306,9 +328,9 @@ ALTER TABLE `customer`
   ADD KEY `Phone` (`Phone`);
 
 --
--- Indexes for table `end-product`
+-- Indexes for table `end_product`
 --
-ALTER TABLE `end-product`
+ALTER TABLE `end_product`
   ADD PRIMARY KEY (`ProductID`),
   ADD UNIQUE KEY `EPOrderID` (`EPOrderID`),
   ADD KEY `CommercialApplication` (`CommercialApplication`),
@@ -356,13 +378,13 @@ ALTER TABLE `warehouse`
 --
 ALTER TABLE `buyer_endproduct`
   ADD CONSTRAINT `buyer_endproduct_ibfk_1` FOREIGN KEY (`BEBuyerID`) REFERENCES `buyer` (`BuyerID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `buyer_endproduct_ibfk_2` FOREIGN KEY (`BEProductID`) REFERENCES `end-product` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `buyer_endproduct_ibfk_2` FOREIGN KEY (`BEProductID`) REFERENCES `end_product` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `end-product`
+-- Constraints for table `end_product`
 --
-ALTER TABLE `end-product`
-  ADD CONSTRAINT `end-product_ibfk_1` FOREIGN KEY (`EPOrderID`) REFERENCES `warehouse` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `end_product`
+  ADD CONSTRAINT `end_product_ibfk_1` FOREIGN KEY (`EPOrderID`) REFERENCES `warehouse` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `referral`
