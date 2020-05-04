@@ -24,27 +24,33 @@
             <li><a href="update.php">Update</a></li>
             <li><a href="display.php">Display</a></li>
             <li><a href="delete.php">Delete</a></li>
-            <li><a href="views.php">Views</a></li>
+            <li><a href="view1.php">View1</a></li>
+			<li><a href="view2.php">View2</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <section id="Description">
+	
       <div class="container">
         <h1>
           RENIM
         </h1>
         <p>
           Help companies retire denim products
+		 
         </p>
+
+		
       </div>
+	  
     </section>
     <section id="name">
+	
       <div class="container">
         <h1>
-          Created by: Utibeabasi Obot, Jaehee Seh, Hamilton Nguyen, Kyra
-          Belgica,Yuan-Kai Lee
+          Created by: Hamilton Nguyen, Kyra Belgica,Utibeabasi Obot, Jaehee Seh,Yuan-Kai Lee
         </h1>
       </div>
     </section>

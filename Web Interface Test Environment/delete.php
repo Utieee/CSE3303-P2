@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSE-3330-001-Team 3 |Insert</title>
+    <title>CSE-3330-001-Team 3 |Delete</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/Query.css" />
-</head>
-
-<body>
-	<header>
+  </head>
+  <body>
+    <header>
       <div class="container">
         <div id="nav_title">
           <h1>
@@ -26,16 +24,17 @@
             <li><a href="Update.php">Update</a></li>
             <li><a href="Display.php">Display</a></li>
             <li><a href="Delete.php">Delete</a></li>
-            <li><a href="Views.php">Views</a></li>
+            <li><a href="view1.php">View1</a></li>
+			<li><a href="view2.php">View2</a></li>
           </ul>
         </nav>
       </div>
     </header>
-	<h3>Insert End Product</h3>
-	<div class="form">
-	<form method = "post" action="insert_controller.php">
-	
-	<div>
+	<div style="background-image: url('./Pictures/unsplash.jpg');">
+    <h3>Delete ProductId from End product that does not exist in a buyer_endproduct table.</h3>
+    <div class="form">
+      <form action="delete_controller.php" method="post">
+        <div>
           <input
             type="text"
             name="Pid"
@@ -43,50 +42,22 @@
             placeholder="ProductId"
           />
         </div>
-
-		<div>
-          <input
-            type="text"
-            name="CApplication"
-            class="menu-control"
-            placeholder="Can this be used for Commercial Application?"
-          />
-        </div>
-		
-		<div>
-          <input
-            type="text"
-            name="Material"
-            class="form-control"
-            placeholder="Is it a Compost Material?"
-          />
-        </div>
-
-        <div>
-          <input
-            type="text"
-            name="EPOrderID"
-            class="form-control"
-            placeholder="EPOrderID"
-          />
-        </div>
-	
-	<button class="submit" name="submit" type="submit" name="submit Query">
+		<div style="background-image: url('./Pictures/unsplash.jpg');">
+        <button class="submit" name="submit" type="submit" name="submit Query">
           Submit Query
         </button>
-	<section id="name">
+      </form>
+    </div>
+
+    <section id="name">
       <div class="container">
         <h1>
-          Created by: Utibeabasi Obot, Jaehee Seh, Hamilton Nguyen, Kyra
-          Belgica,Yuan-Kai Lee
+           Created by: Hamilton Nguyen, Kyra Belgica,Utibeabasi Obot, Jaehee Seh,Yuan-Kai Lee
         </h1>
       </div>
     </section>
-	<footer>
+    <footer>
       <p>CSE-3330-001_TEAM 3, Copyright &copy;2020</p>
     </footer>
-	</fieldset>
-	</form>
-	</div>
-	</body>
-	</html>
+  </body>
+</html>

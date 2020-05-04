@@ -75,7 +75,7 @@ header a:hover {
 }
 
 #Description {
-  background: url(/Client_Side/Pictures/unsplash.jpg) no-repeat;
+  background: url(unsplash.jpg) no-repeat;
   background-size: cover;
   height: 100vh;
   text-align: center;

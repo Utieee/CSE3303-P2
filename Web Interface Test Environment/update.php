@@ -26,15 +26,18 @@
             <li><a href="Update.php">Update</a></li>
             <li><a href="Display.php">Display</a></li>
             <li><a href="Delete.php">Delete</a></li>
-            <li><a href="Views.php">Views</a></li>
+            <li><a href="view1.php">View1</a></li>
+			<li><a href="view2.php">View2</a></li>
+			
           </ul>
         </nav>
       </div>
     </header>
+	<div style="background-image: url('./Pictures/unsplash.jpg');">
 	<h3>Update End Product Information</h3>
 	<div class="form">
 	<form method = "post" action="update_controller.php">
-	
+	<div style="background-image: url('./Pictures/unsplash.jpg');">
 	<div>
           <input
             type="text"
@@ -69,16 +72,17 @@
             class="form-control"
             placeholder="Enter a New EPOrderID to update."
           />
-        </div>
 	
+		
+    </div>
+	<div style="background-image: url('./Pictures/unsplash.jpg');">
 	<button class="submit" name="submit" type="submit" name="submit Query">
           Submit Query
         </button>
 	<section id="name">
       <div class="container">
         <h1>
-          Created by: Utibeabasi Obot, Jaehee Seh, Hamilton Nguyen, Kyra
-          Belgica,Yuan-Kai Lee
+          Created by: Hamilton Nguyen, Kyra Belgica,Utibeabasi Obot, Jaehee Seh,Yuan-Kai Lee
         </h1>
       </div>
     </section>
