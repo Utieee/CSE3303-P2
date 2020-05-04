@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSE-3330-001-Team 3 |Insert</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/Query.css" />
-  </head>
-  <body>
-    <header>
+</head>
+
+<body>
+	<header>
       <div class="container">
         <div id="nav_title">
           <h1>
@@ -19,20 +21,21 @@
         <nav>
           <!-- <img class="logo" src="./Pictures/logo.jpg" />-->
           <ul>
-            <li class="current"><a href="Index.html">Home</a></li>
-            <li><a href="Insert.html">Insert</a></li>
-            <li><a href="Update.html">Update</a></li>
-            <li><a href="Display.html">Display</a></li>
-            <li><a href="Delete.html">Delete</a></li>
-            <li><a href="Views.html">Views</a></li>
+            <li class="current"><a href="Index.php">Home</a></li>
+            <li><a href="Insert.php">Insert</a></li>
+            <li><a href="Update.php">Update</a></li>
+            <li><a href="Display.php">Display</a></li>
+            <li><a href="Delete.php">Delete</a></li>
+            <li><a href="Views.php">Views</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <h3>Insert End Product</h3>
-    <div class="form">
-      <form action="Insert.php" method="post">
-        <div>
+	<h3>Insert End Product</h3>
+	<div class="form">
+	<form method = "post" action="insert_controller.php">
+	
+	<div>
           <input
             type="text"
             name="Pid"
@@ -40,29 +43,23 @@
             placeholder="ProductId"
           />
         </div>
-       
-        <div>
-          <select
-            placeholder="CommercialApplication"
+
+		<div>
+          <input
+            type="text"
             name="CApplication"
             class="menu-control"
-          >
-            <option selected disabled>Will you like this to be a Commercial Application </option>
-            <option name="YES">YES</option>
-            <option name="NO">NO</option>
-          </select>
+            placeholder="Can this be used for Commercial Application?"
+          />
         </div>
-
-        <div>
-          <select
-            placeholder="CompostMaterial"
+		
+		<div>
+          <input
+            type="text"
             name="Material"
             class="form-control"
-          >
-            <option selected disabled>Will you like a CompostMaterial </option>
-            <option name="YES">YES</option>
-            <option name="NO">NO</option>
-          </select>
+            placeholder="Is it a Compost Material?"
+          />
         </div>
 
         <div>
@@ -72,25 +69,12 @@
             class="form-control"
             placeholder="EPOrderID"
           />
-
-          
-       
-        <div>
-          <input
-            type="text"
-            name="Link"
-            class="form-control"
-            placeholder="Insert OrderId to be added to the warehouse"
-          />
         </div>
-
-        <button class="submit" name="Sub" type="submit" name="submit Query">
+	
+	<button class="submit" name="submit" type="submit" name="submit Query">
           Submit Query
         </button>
-      </form>
-    </div>
-
-    <section id="name">
+	<section id="name">
       <div class="container">
         <h1>
           Created by: Utibeabasi Obot, Jaehee Seh, Hamilton Nguyen, Kyra
@@ -98,8 +82,11 @@
         </h1>
       </div>
     </section>
-    <footer>
+	<footer>
       <p>CSE-3330-001_TEAM 3, Copyright &copy;2020</p>
     </footer>
-  </body>
-</html>
+	</fieldset>
+	</form>
+	</div>
+	</body>
+	</html>

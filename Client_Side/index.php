@@ -15,15 +15,16 @@
             CSE 3330 <span class="highlight"> Team 3</span>
           </h1>
         </div>
+		
         <nav>
           <!-- <img class="logo" src="./Pictures/logo.jpg" />-->
           <ul>
-            <li class="current"><a href="Index.html">Home</a></li>
-            <li><a href="Insert.html">Insert</a></li>
-            <li><a href="Update.html">Update</a></li>
-            <li><a href="Display.html">Display</a></li>
-            <li><a href="Delete.html">Delete</a></li>
-            <li><a href="Views.html">Views</a></li>
+            <li class="current"><a href="Index.php">Home</a></li>
+            <li><a href="insert.php">Insert</a></li>
+            <li><a href="update.php">Update</a></li>
+            <li><a href="display.php">Display</a></li>
+            <li><a href="delete.php">Delete</a></li>
+            <li><a href="views.php">Views</a></li>
           </ul>
         </nav>
       </div>

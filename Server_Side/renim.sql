@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2020 at 01:16 AM
+-- Generation Time: May 04, 2020 at 08:09 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.4
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -91,20 +92,6 @@ INSERT INTO `buyer_endproduct` (`BEBuyerID`, `BEProductID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `buyer_endproduct_info`
--- (See below for the actual view)
---
-CREATE TABLE `buyer_endproduct_info` (
-`FN` varchar(100)
-,`LN` varchar(100)
-,`Items` int(255)
-,`CA` varchar(500)
-,`CM` varchar(500)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `customer`
 --
 
@@ -116,7 +103,7 @@ CREATE TABLE `customer` (
   `Address` varchar(100) NOT NULL,
   `FName` varchar(20) NOT NULL,
   `LName` varchar(20) NOT NULL,
-  `RefID` varchar(6) NOT NULL
+  `RefID` varchar(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -158,13 +145,16 @@ CREATE TABLE `end_product` (
 --
 
 INSERT INTO `end_product` (`ProductID`, `CommercialApplication`, `CompostMaterial`, `EPOrderID`) VALUES
-('1', 'NO', 'YES', '154148'),
+('1', 'No', 'No', '122967'),
 ('10', 'YES', 'NO', '154157'),
 ('11', 'NO', 'YES', '154158'),
 ('12', 'NO', 'NO', '154159'),
 ('13', 'NO', 'YES', '154160'),
 ('14', 'YES', 'YES', '154161'),
 ('15', 'NO', 'YES', '154162'),
+('16', 'YES', 'YES', '154156'),
+('17', 'YES', 'YES', '154156'),
+('18', 'YES', 'YES', '154156'),
 ('2', 'YES', 'NO', '154149'),
 ('3', 'YES', 'YES', '154150'),
 ('4', 'NO', 'YES', '154151'),
@@ -211,10 +201,10 @@ INSERT INTO `referral` (`FName`, `LName`, `ReferalID`, `CustomerID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `retail company`
+-- Table structure for table `retail_company`
 --
 
-CREATE TABLE `retail company` (
+CREATE TABLE `retail_company` (
   `ClientID` varchar(6) NOT NULL,
   `Name` varchar(100) NOT NULL,
   `Address` varchar(500) NOT NULL,
@@ -224,10 +214,10 @@ CREATE TABLE `retail company` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `retail company`
+-- Dumping data for table `retail_company`
 --
 
-INSERT INTO `retail company` (`ClientID`, `Name`, `Address`, `RCCustomerID`, `RCOrderID`, `RCUsedDenim`) VALUES
+INSERT INTO `retail_company` (`ClientID`, `Name`, `Address`, `RCCustomerID`, `RCOrderID`, `RCUsedDenim`) VALUES
 ('9203', 'Levis', '9091 Cotton Blvd, San Francisco,CA', '14', '154148', 149),
 ('9204', 'Madewell', '2380 Industrial Way,Los Angeles,CA', '15', '154149', 84),
 ('9205', 'Gap', '4828 Eagles Nest Drive,Redding,CA', '13', '154150', 2),
@@ -282,15 +272,6 @@ INSERT INTO `warehouse` (`OrderID`, `Amount`, `Address`, `Email`, `Phone`, `InBu
 ('154161', 150, '900 State Street, Salem, OR', 'marifar@gmail.com', '503-813-2139', 150, '2020-04-11', '2020-07-11'),
 ('154162', 200, '1918 E Yesler Way, Seattle, WA', 'afuaei@gmail.com', '206-841-2913', 200, '2020-04-15', '2020-07-15');
 
--- --------------------------------------------------------
-
---
--- Structure for view `buyer_endproduct_info`
---
-DROP TABLE IF EXISTS `buyer_endproduct_info`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `buyer_endproduct_info`  AS  select `buyer`.`FName` AS `FN`,`buyer`.`LName` AS `LN`,`buyer`.`NoOfItems` AS `Items`,`end_product`.`CommercialApplication` AS `CA`,`end_product`.`CompostMaterial` AS `CM` from ((`buyer` join `buyer_endproduct`) join `end_product`) where `buyer_endproduct`.`BEBuyerID` = `buyer`.`BuyerID` and `buyer_endproduct`.`BEProductID` = `end_product`.`ProductID` ;
-
 --
 -- Indexes for dumped tables
 --
@@ -332,9 +313,9 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `end_product`
   ADD PRIMARY KEY (`ProductID`),
-  ADD UNIQUE KEY `EPOrderID` (`EPOrderID`),
   ADD KEY `CommercialApplication` (`CommercialApplication`),
-  ADD KEY `CompostMaterial` (`CompostMaterial`);
+  ADD KEY `CompostMaterial` (`CompostMaterial`),
+  ADD KEY `EPOrderID` (`EPOrderID`);
 
 --
 -- Indexes for table `referral`
@@ -346,9 +327,9 @@ ALTER TABLE `referral`
   ADD KEY `LName` (`LName`);
 
 --
--- Indexes for table `retail company`
+-- Indexes for table `retail_company`
 --
-ALTER TABLE `retail company`
+ALTER TABLE `retail_company`
   ADD PRIMARY KEY (`ClientID`),
   ADD UNIQUE KEY `RCCustomerID` (`RCCustomerID`),
   ADD UNIQUE KEY `RCOrderID` (`RCOrderID`),
@@ -381,12 +362,6 @@ ALTER TABLE `buyer_endproduct`
   ADD CONSTRAINT `buyer_endproduct_ibfk_2` FOREIGN KEY (`BEProductID`) REFERENCES `end_product` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `end_product`
---
-ALTER TABLE `end_product`
-  ADD CONSTRAINT `end_product_ibfk_1` FOREIGN KEY (`EPOrderID`) REFERENCES `warehouse` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `referral`
 --
 ALTER TABLE `referral`
@@ -394,11 +369,11 @@ ALTER TABLE `referral`
   ADD CONSTRAINT `referral_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `retail company`
+-- Constraints for table `retail_company`
 --
-ALTER TABLE `retail company`
-  ADD CONSTRAINT `retail company_ibfk_1` FOREIGN KEY (`RCCustomerID`) REFERENCES `customer` (`CustomerID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `retail company_ibfk_2` FOREIGN KEY (`RCOrderID`) REFERENCES `warehouse` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `retail_company`
+  ADD CONSTRAINT `retail_company_ibfk_1` FOREIGN KEY (`RCCustomerID`) REFERENCES `customer` (`CustomerID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `retail_company_ibfk_2` FOREIGN KEY (`RCOrderID`) REFERENCES `warehouse` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

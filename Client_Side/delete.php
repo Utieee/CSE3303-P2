@@ -19,19 +19,19 @@
         <nav>
           <!-- <img class="logo" src="./Pictures/logo.jpg" />-->
           <ul>
-            <li class="current"><a href="Index.html">Home</a></li>
-            <li><a href="Insert.html">Insert</a></li>
-            <li><a href="Update.html">Update</a></li>
-            <li><a href="Display.html">Display</a></li>
-            <li><a href="Delete.html">Delete</a></li>
-            <li><a href="Views.html">Views</a></li>
+            <li class="current"><a href="Index.php">Home</a></li>
+            <li><a href="Insert.php">Insert</a></li>
+            <li><a href="Update.php">Update</a></li>
+            <li><a href="Display.php">Display</a></li>
+            <li><a href="Delete.php">Delete</a></li>
+            <li><a href="Views.php">Views</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <h3>Insert ProductId for End product without a buyer</h3>
+    <h3>Delete ProductId from End product that does not exist in a buyer_endproduct table.</h3>
     <div class="form">
-      <form action="Insert.php" method="post">
+      <form action="delete_controller.php" method="post">
         <div>
           <input
             type="text"
@@ -41,7 +41,7 @@
           />
         </div>
 
-        <button class="submit" name="Sub" type="submit" name="submit Query">
+        <button class="submit" name="submit" type="submit" name="submit Query">
           Submit Query
         </button>
       </form>
