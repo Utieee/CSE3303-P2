@@ -50,7 +50,7 @@
 	
       <div class="container">
         <h1>
-          Created by: Hamilton Nguyen, Kyra Belgica,Utibeabasi Obot, Jaehee Seh,Yuan-Kai Lee
+          Created by: Hamilton Nguyen, Kyra Belgica,Utibeabasi Obot, Jaehee Seh
         </h1>
       </div>
     </section>

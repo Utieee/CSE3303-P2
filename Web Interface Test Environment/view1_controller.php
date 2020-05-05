@@ -1,5 +1,5 @@
 <?php
-
+//Created by: Hamilton Nguyen, Kyra Belgica,Utibeabasi Obot, Jaehee Seh
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
