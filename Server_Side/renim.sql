@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2020 at 08:09 AM
+-- Generation Time: May 05, 2020 at 02:43 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -92,6 +92,20 @@ INSERT INTO `buyer_endproduct` (`BEBuyerID`, `BEProductID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `buyer_endproduct_info`
+-- (See below for the actual view)
+--
+CREATE TABLE `buyer_endproduct_info` (
+`FN` varchar(100)
+,`LN` varchar(100)
+,`Items` int(255)
+,`CA` varchar(3)
+,`CM` varchar(3)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
@@ -135,8 +149,8 @@ INSERT INTO `customer` (`CustomerID`, `NoOfItems`, `Email`, `Phone`, `Address`, 
 
 CREATE TABLE `end_product` (
   `ProductID` varchar(6) NOT NULL,
-  `CommercialApplication` varchar(500) NOT NULL,
-  `CompostMaterial` varchar(500) NOT NULL,
+  `CommercialApplication` varchar(3) NOT NULL,
+  `CompostMaterial` varchar(3) NOT NULL,
   `EPOrderID` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -271,6 +285,15 @@ INSERT INTO `warehouse` (`OrderID`, `Amount`, `Address`, `Email`, `Phone`, `InBu
 ('154160', 80, '14798 E Iliff Avenue, Aurora, CO', 'kadjair@yahoo.com', '303-728-4183', 80, '2020-04-09', '2020-07-09'),
 ('154161', 150, '900 State Street, Salem, OR', 'marifar@gmail.com', '503-813-2139', 150, '2020-04-11', '2020-07-11'),
 ('154162', 200, '1918 E Yesler Way, Seattle, WA', 'afuaei@gmail.com', '206-841-2913', 200, '2020-04-15', '2020-07-15');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `buyer_endproduct_info`
+--
+DROP TABLE IF EXISTS `buyer_endproduct_info`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `buyer_endproduct_info`  AS  select `buyer`.`FName` AS `FN`,`buyer`.`LName` AS `LN`,`buyer`.`NoOfItems` AS `Items`,`end_product`.`CommercialApplication` AS `CA`,`end_product`.`CompostMaterial` AS `CM` from ((`buyer` join `buyer_endproduct`) join `end_product`) where `buyer_endproduct`.`BEBuyerID` = `buyer`.`BuyerID` and `buyer_endproduct`.`BEProductID` = `end_product`.`ProductID` ;
 
 --
 -- Indexes for dumped tables
