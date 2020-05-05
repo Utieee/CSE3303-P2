@@ -20,7 +20,7 @@ else
 {
 	if (isset($_POST["submit"]))
 	{	
-		$query = "SELECT FN, LN FROM buyer, buyer_endproduct, end_product WHERE buyer.BuyerID = buyer_endproduct.BEBuyerID AND buyer_endproduct.BEProductID = end_product.ProductID AND end_product.CommercialApplication = "YES" ";
+		$query = "SELECT FN, LN FROM buyer_endproduct_info WHERE buyer_endproduct_info.CA = 'YES' ";
 		if($result = mysqli_query($conn,$query))
 		{	
 			while ($row = mysqli_fetch_assoc($result)) 
